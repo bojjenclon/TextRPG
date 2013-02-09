@@ -1,6 +1,7 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
+#include <boost/smart_ptr/shared_ptr.hpp>
 #include <boost/unordered/unordered_map.hpp>
 
 #include "Item.hpp"
@@ -34,11 +35,11 @@ class Actor {
 		void modModifier(const std::string key, int mod);
 
 		boost::shared_ptr<Item> equipped(const std::string key);
-		bool equip(const std::string key, boost::shared_ptr<Item> value);
+		bool equip(const std::string key, ptrItem value);
 
         boost::shared_ptr<Inventory> getInventory();
 
-		bool addItem(boost::shared_ptr<Item> item);
+		bool addItem(ptrItem item);
         void removeItem(int index);
 
         void levelUp();
@@ -67,9 +68,11 @@ class Actor {
 		boost::unordered_map<std::string, int> stats_;
 		boost::unordered_map<std::string, int> modifiers_;
 
-		boost::unordered_map<std::string, boost::shared_ptr<Item>> equipment_;
+		boost::unordered_map<std::string, ptrItem> equipment_;
 
         boost::shared_ptr<Inventory> inv_;
 };
+
+typedef boost::shared_ptr<Actor> ptrActor;
 
 #endif

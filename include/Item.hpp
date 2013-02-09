@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include <boost/smart_ptr/shared_ptr.hpp>
+
 class Item {
     public:
         Item(const std::string& name, const std::string& id, const std::string& description);
@@ -36,5 +38,7 @@ class Item {
 
         bool equipable_;
 };
+
+typedef boost::shared_ptr<Item> ptrItem;
 
 #endif

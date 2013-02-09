@@ -156,7 +156,7 @@ Actor* initPlayer() {
 	return new Actor(name, gender, race, profession, 1);
 }
 
-void printEquipment(Actor* player) {
+void printEquipment(ptrActor player) {
 	boost::shared_ptr<Item> item = player->equipped("head");
 	std::cout << "Head: ";
 	if (item) {
@@ -232,9 +232,10 @@ void printEquipment(Actor* player) {
 
 int main(int argc, char* argv[]) {
     std::string name[] = {"Rallos", "Zendry"};
-	Actor* player = new Actor(name, false, 2, 6, 3);
+	ptrActor player = ptrActor(new Actor(name, false, 2, 6, 3));
 
 	//Actor* player = initPlayer();
+	//ptrActor player = ptrActor(initPlayer());
 
 	/* Initial Player Info */
 
@@ -242,7 +243,7 @@ int main(int argc, char* argv[]) {
 
 	/* Add Experience */
 
-	unsigned long expToGrant = 15000; // UINT_MAX
+	unsigned int expToGrant = 15000; // UINT_MAX
     player->addExperience(expToGrant);
 
     std::cout << "\tYou have been granted 15,000 experience points." << std::endl << std::endl;
@@ -261,8 +262,8 @@ int main(int argc, char* argv[]) {
 
 	/* Add Items */
 
-	player->addItem(boost::shared_ptr<Item>(new Helmet("Bronze Helm", "Simple bronze helmet.")));
-	player->addItem(boost::shared_ptr<Item>(new HealthPotion(0)));
+	player->addItem(ptrItem(new Helmet("Bronze Helm", "Simple bronze helmet.")));
+	player->addItem(ptrItem(new HealthPotion(0)));
 
     std::cout << "\tYou have been given a potion and a bronze helmet." << std::endl << std::endl;
 
@@ -274,11 +275,9 @@ int main(int argc, char* argv[]) {
 	
 	std::cout << std::endl;
 	
-	player->equip("head", boost::shared_ptr<Item>(new Helmet("Fur Hat", "A comfortable fur hat.")));
+	player->equip("head", ptrItem(new Helmet("Fur Hat", "A comfortable fur hat.")));
 
 	printEquipment(player);
-
-	delete player;
 
     return EXIT_SUCCESS;
 }

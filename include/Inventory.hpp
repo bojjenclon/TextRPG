@@ -2,6 +2,7 @@
 #define INVENTORY_HPP
 
 #include <vector>
+
 #include <boost/smart_ptr/shared_ptr.hpp>
 
 #include "Item.hpp"
@@ -16,12 +17,12 @@ class Inventory {
 		
 		int getNumItems();
 
-		bool addItem(boost::shared_ptr<Item> item);
+		bool addItem(ptrItem item);
         void removeItem(int);
-		void removeItem(boost::shared_ptr<Item> item);
+		void removeItem(ptrItem item);
 
-		boost::shared_ptr<Item> getItem(int index);
-		int getItemIndex(boost::shared_ptr<Item> item);
+		ptrItem getItem(int index);
+		int getItemIndex(ptrItem item);
 
         int usePotion(int);
 
@@ -30,7 +31,7 @@ class Inventory {
 
         std::string toString();
     private:
-        std::vector<boost::shared_ptr<Item>> items_;
+        std::vector<ptrItem> items_;
 };
 
 #endif
