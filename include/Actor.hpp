@@ -34,10 +34,10 @@ class Actor {
 		void setModifier(const std::string key, int value);
 		void modModifier(const std::string key, int mod);
 
-		boost::shared_ptr<Item> equipped(const std::string key);
+		ptrItem equipped(const std::string key);
 		bool equip(const std::string key, ptrItem value);
 
-        boost::shared_ptr<Inventory> getInventory();
+        ptrInventory getInventory();
 
 		bool addItem(ptrItem item);
         void removeItem(int index);
@@ -70,7 +70,7 @@ class Actor {
 
 		boost::unordered_map<std::string, ptrItem> equipment_;
 
-        boost::shared_ptr<Inventory> inv_;
+        ptrInventory inv_;
 };
 
 typedef boost::shared_ptr<Actor> ptrActor;

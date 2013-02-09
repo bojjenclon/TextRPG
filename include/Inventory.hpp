@@ -26,12 +26,11 @@ class Inventory {
 
         int usePotion(int);
 
-        /*std::string getParent(int);
-        bool isEquipable(int);*/
-
         std::string toString();
     private:
         std::vector<ptrItem> items_;
 };
+
+typedef boost::shared_ptr<Inventory> ptrInventory;
 
 #endif
