@@ -83,7 +83,7 @@ std::string Inventory::toString() {
             ss << i + 1 << ": " << items_[i]->toString();
 
             if (i < items_.size() - 1) {
-                ss << std::endl;
+                ss << "\n";
             }
         }
 

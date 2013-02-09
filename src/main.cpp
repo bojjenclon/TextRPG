@@ -26,7 +26,7 @@ Actor* initPlayer() {
 	
 	std::string name[2];
 	
-	std::cout << "First name:" << std::endl;
+	std::cout << "First name:" << "\n";
 
 	while (true) {
 		input.clear();
@@ -46,7 +46,7 @@ Actor* initPlayer() {
 		}
 	}
 	
-	std::cout << "Last name:" << std::endl;
+	std::cout << "Last name:" << "\n";
 	
 	while (true) {
 		input.clear();
@@ -70,9 +70,9 @@ Actor* initPlayer() {
 	
 	bool gender = false;
 	
-	std::cout << "Choose your gender:" << std::endl;
-	std::cout << "male" << std::endl;
-	std::cout << "female" << std::endl;
+	std::cout << "Choose your gender:" << "\n";
+	std::cout << "male" << "\n";
+	std::cout << "female" << "\n";
 	
 	while (true) {
 		input.clear();
@@ -101,10 +101,10 @@ Actor* initPlayer() {
 	
 	int race = 0;
 	
-	std::cout << "Choose your race:" << std::endl;
+	std::cout << "Choose your race:" << "\n";
 		
 	for (unsigned int i = 0; i < Actor::RACES.size(); ++i) {
-		std::cout << i << " - " << Actor::RACES.at(i) << std::endl;
+		std::cout << i << " - " << Actor::RACES.at(i) << "\n";
 	}
 	
 	while (true) {
@@ -129,10 +129,10 @@ Actor* initPlayer() {
 	
 	int profession = 0;
 	
-	std::cout << "Choose your profession:" << std::endl;
+	std::cout << "Choose your profession:" << "\n";
 		
 	for (unsigned int i = 0; i < Actor::PROFESSIONS.size(); ++i) {
-		std::cout << i << " - " << Actor::PROFESSIONS.at(i) << std::endl;
+		std::cout << i << " - " << Actor::PROFESSIONS.at(i) << "\n";
 	}
 	
 	while (true) {
@@ -160,73 +160,73 @@ void printEquipment(ptrActor player) {
 	boost::shared_ptr<Item> item = player->equipped("head");
 	std::cout << "Head: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("chest");
 	std::cout << "Chest: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("legs");
 	std::cout << "Legs: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("feet");
 	std::cout << "Feet: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("hands");
 	std::cout << "Hands: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("shoulders");
 	std::cout << "Shoulders: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("accessory1");
 	std::cout << "Accessory 1: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 	
 	item = player->equipped("accessory2");
 	std::cout << "Accessory 2: ";
 	if (item) {
-		std::cout << item->getName() << ", " << item->getDescription() << std::endl;
+		std::cout << item->getName() << ", " << item->getDescription() << "\n";
 	}
 	else {
-		std::cout << "<empty>" << std::endl;
+		std::cout << "<empty>" << "\n";
 	}
 }
 
@@ -234,46 +234,45 @@ int main(int argc, char* argv[]) {
     std::string name[] = {"Rallos", "Zendry"};
 	ptrActor player = ptrActor(new Actor(name, false, 2, 6, 3));
 
-	//Actor* player = initPlayer();
 	//ptrActor player = ptrActor(initPlayer());
 
 	/* Initial Player Info */
 
-    std::cout << player->toString() << std::endl;
+    std::cout << player->toString() << "\n";
 
 	/* Add Experience */
 
 	unsigned int expToGrant = 15000; // UINT_MAX
     player->addExperience(expToGrant);
 
-    std::cout << "\tYou have been granted 15,000 experience points." << std::endl << std::endl;
+    std::cout << "\tYou have been granted 15,000 experience points." << "\n" << "\n";
 
-    std::cout << player->toString() << std::endl;
+    std::cout << player->toString() << "\n";
 
 	/* Damage Player */
 	
 	player->setModifier("hp", -((player->getStat("hp") / 10.0f) + 0.5f));
 	
-	std::cout << "\tYou have been damaged by 10% of your maximum health." << std::endl << std::endl;
+	std::cout << "\tYou have been damaged by 10% of your maximum health." << "\n" << "\n";
 
-    std::cout << player->toString() << std::endl;
+    std::cout << player->toString() << "\n";
 
-    std::cout << "Inventory: " << std::endl << player->getInventory()->toString() << std::endl << std::endl;
+    std::cout << "Inventory: " << "\n" << player->getInventory()->toString() << "\n" << "\n";
 
 	/* Add Items */
 
 	player->addItem(ptrItem(new Helmet("Bronze Helm", "Simple bronze helmet.")));
 	player->addItem(ptrItem(new HealthPotion(0)));
 
-    std::cout << "\tYou have been given a potion and a bronze helmet." << std::endl << std::endl;
+    std::cout << "\tYou have been given a potion and a bronze helmet." << "\n" << "\n";
 
-    std::cout << "Inventory: " << std::endl << player->getInventory()->toString() << std::endl;
+    std::cout << "Inventory: " << "\n" << player->getInventory()->toString() << "\n";
 
-	std::cout << std::endl;
+	std::cout << "\n";
 	
 	printEquipment(player);
 	
-	std::cout << std::endl;
+	std::cout << "\n";
 	
 	player->equip("head", ptrItem(new Helmet("Fur Hat", "A comfortable fur hat.")));
 

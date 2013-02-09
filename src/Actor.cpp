@@ -255,37 +255,37 @@ void Actor::checkExperience() {
 std::string Actor::toString() {
     std::stringstream ss;
 
-	ss << "---------------------------------" << std::endl;
+	ss << "---------------------------------" << "\n";
 
-    ss << "Name: " << getName(2) << std::endl;
+    ss << "Name: " << getName(2) << "\n";
 	
-	ss << std::endl;
+	ss << "\n";
 	
-	ss << "Gender: " << (getGender() ? "Female" : "Male") << std::endl;
-	ss << "Race: " << getRaceName() << std::endl;
-	ss << "Profession: " << getProfessionName() << std::endl;
+	ss << "Gender: " << (getGender() ? "Female" : "Male") << "\n";
+	ss << "Race: " << getRaceName() << "\n";
+	ss << "Profession: " << getProfessionName() << "\n";
 	
-	ss << std::endl;
+	ss << "\n";
 	
-    ss << "Level: " << getLevel() << std::endl;
-    ss << "Experience: " << getExperience() << std::endl;
-    ss << "Next Level: " << getExperienceNeeded(getLevel() + 1) << std::endl;
+    ss << "Level: " << getLevel() << "\n";
+    ss << "Experience: " << getExperience() << "\n";
+    ss << "Next Level: " << getExperienceNeeded(getLevel() + 1) << "\n";
 	
-	ss << std::endl;
+	ss << "\n";
 	
-	ss << "HP: " << getModifiedStat("hp") << " / " << getStat("hp") << std::endl;
-	ss << "MP: " << getModifiedStat("mp") << " / " << getStat("mp") << std::endl;
+	ss << "HP: " << getModifiedStat("hp") << " / " << getStat("hp") << "\n";
+	ss << "MP: " << getModifiedStat("mp") << " / " << getStat("mp") << "\n";
 	
-	ss << std::endl;
+	ss << "\n";
 	
-    ss << "Strength: " << getStat("strength") << std::endl;
-    ss << "Dexterity: " << getStat("dexterity") << std::endl;
-    ss << "Constitution: " << getStat("constitution") << std::endl;
-    ss << "Intelligence: " << getStat("intelligence") << std::endl;
-    ss << "Wisdom: " << getStat("wisdom") << std::endl;
-    ss << "Charisma: " << getStat("charisma") << std::endl;
+    ss << "Strength: " << getStat("strength") << "\n";
+    ss << "Dexterity: " << getStat("dexterity") << "\n";
+    ss << "Constitution: " << getStat("constitution") << "\n";
+    ss << "Intelligence: " << getStat("intelligence") << "\n";
+    ss << "Wisdom: " << getStat("wisdom") << "\n";
+    ss << "Charisma: " << getStat("charisma") << "\n";
 	
-	ss << "---------------------------------" << std::endl;
+	ss << "---------------------------------" << "\n";
 
     return ss.str();
 }
