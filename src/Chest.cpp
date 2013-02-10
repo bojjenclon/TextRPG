@@ -1,5 +1,6 @@
 #include "Chest.hpp"
 
-Cuirass::Cuirass(const std::string& name, const std::string& description) : Armor(name, "chest", description) {
+Chest::Chest(const std::string& name, const std::string& description, const int& bonus)
+: Armor(name, "chest", description, bonus) {
     setParent("armor");
 }

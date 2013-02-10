@@ -5,7 +5,10 @@
 
 class Armor : public Item {
     public:
-        Armor(const std::string&, const std::string&, const std::string&);
+        Armor(const std::string& name, const std::string& id, const std::string& description, const int& bonus=0);
+		
+	private:
+		int bonus_;
 };
 
 #endif

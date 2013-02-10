@@ -1,6 +1,7 @@
 #include "Hands.hpp"
 
-Gauntlet::Gauntlet(const std::string& name, const std::string& description) : Armor(name, "hands", description) {
+Hands::Hands(const std::string& name, const std::string& description, const int& bonus)
+: Armor(name, "hands", description, bonus) {
     setParent("armor");
 }
 

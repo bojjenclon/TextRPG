@@ -13,22 +13,23 @@ class Item {
         std::string getID();
         std::string getDescription();
 
-        void setName(const std::string&);
-        void setID(const std::string&);
-        void setDescription(const std::string&);
+        void setName(const std::string& name);
+        void setID(const std::string& id);
+        void setDescription(const std::string& description);
 
         std::string getParent();
-        void setParent(const std::string&);
+        void setParent(const std::string& parent);
 
         bool isEquipable();
-        void setEquipable(bool);
+        void setEquipable(bool equipable);
 
         int use();
 
-        bool equals(Item*&);
-        bool equals(Item&);
+        bool equals(Item*& other);
+        bool equals(Item& other);
 
         std::string toString();
+		
     private:
         std::string name_;
         std::string id_;

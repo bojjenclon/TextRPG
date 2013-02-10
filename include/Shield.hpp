@@ -6,7 +6,7 @@
 
 class Shield : public Armor {
     public:
-        Shield(const std::string&, const std::string&);
+        Shield(const std::string& name, const std::string& description, const int& bonus=0);
 };
 
 #endif

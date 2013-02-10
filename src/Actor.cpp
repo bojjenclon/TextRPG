@@ -75,6 +75,7 @@ void Actor::initializeStats(int toLevel) {
 		("intelligence", 0)
 		("wisdom", 0)
 		("charisma", 0)
+		("ac", 0)
 	;
 	modifiers_ = temp;
 

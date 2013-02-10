@@ -13,7 +13,8 @@ const std::string STAT_NAMES[] = {
 	"constitution",
 	"intelligence",
 	"wisdom",
-	"charisma"
+	"charisma",
+	"ac"
 };
 
 boost::unordered_map<std::string, int> generateStats(int profession) {
@@ -42,6 +43,8 @@ boost::unordered_map<std::string, int> defaultStats() {
 	
 	data["hp"] = std::max(rollHighest(2, 12), rollHighest(2, 12));
 	data["mp"] = std::max(rollHighest(2, 8), rollHighest(2, 8));
+	
+	data["ac"] = 10;
 
     return data;
 }

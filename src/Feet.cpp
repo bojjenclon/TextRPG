@@ -1,5 +1,6 @@
 #include "Feet.hpp"
 
-Boots::Boots(const std::string& name, const std::string& description) : Armor(name, "feet", description) {
+Feet::Feet(const std::string& name, const std::string& description, const int& bonus)
+: Armor(name, "feet", description, bonus) {
     setParent("armor");
 }

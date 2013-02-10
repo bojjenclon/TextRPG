@@ -3,9 +3,9 @@
 
 #include "Armor.hpp"
 
-class Cuirass : public Armor {
+class Chest : public Armor {
     public:
-        Cuirass(const std::string&, const std::string&);
+        Chest(const std::string& name, const std::string& description, const int& bonus=0);
 };
 
 #endif

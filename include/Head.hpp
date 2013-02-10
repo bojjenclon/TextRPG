@@ -1,12 +1,11 @@
 #ifndef HELMET_HPP
 #define HELMET_HPP
 
-
 #include "Armor.hpp"
 
-class Helmet : public Armor {
+class Head : public Armor {
     public:
-        Helmet(const std::string&, const std::string&);
+        Head(const std::string& name, const std::string& description, const int& bonus=0);
 };
 
 #endif

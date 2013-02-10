@@ -261,7 +261,7 @@ int main(int argc, char* argv[]) {
 
 	/* Add Items */
 
-	player->addItem(ptrItem(new Helmet("Bronze Helm", "Simple bronze helmet.")));
+	player->addItem(ptrItem(new Head("Bronze Helm", "Simple bronze helmet.")));
 	player->addItem(ptrItem(new HealthPotion(0)));
 
     std::cout << "\tYou have been given a potion and a bronze helmet." << "\n" << "\n";
@@ -274,7 +274,7 @@ int main(int argc, char* argv[]) {
 	
 	std::cout << "\n";
 	
-	player->equip("head", ptrItem(new Helmet("Fur Hat", "A comfortable fur hat.")));
+	player->equip("head", ptrItem(new Head("Fur Hat", "A comfortable fur hat.")));
 
 	printEquipment(player);
 

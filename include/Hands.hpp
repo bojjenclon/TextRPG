@@ -1,12 +1,11 @@
 #ifndef GAUNTLET_HPP
 #define GAUNTLET_HPP
 
-
 #include "Armor.hpp"
 
-class Gauntlet : public Armor {
+class Hands : public Armor {
     public:
-        Gauntlet(const std::string&, const std::string&);
+        Hands(const std::string& name, const std::string& description, const int& bonus=0);
 };
 
 #endif
