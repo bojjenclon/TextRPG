@@ -253,18 +253,18 @@ int main(int argc, char* argv[]) {
 	
 	player->setModifier("hp", -((player->getStat("hp") / 10.0f) + 0.5f));
 	
-	std::cout << "\tYou have been damaged by 10% of your maximum health." << "\n" << "\n";
+	std::cout << "\tYou have been damaged by 10% of your maximum health.\n\n";
 
     std::cout << player->toString() << "\n";
 
-    std::cout << "Inventory: " << "\n" << player->getInventory()->toString() << "\n" << "\n";
+    std::cout << "Inventory: " << "\n" << player->getInventory()->toString() << "\n\n";
 
 	/* Add Items */
 
-	player->addItem(ptrItem(new Head("Bronze Helm", "Simple bronze helmet.")));
+	player->addItem(ptrItem(new Head("Bronze Helm", "Simple bronze helmet.", 2)));
 	player->addItem(ptrItem(new HealthPotion(0)));
 
-    std::cout << "\tYou have been given a potion and a bronze helmet." << "\n" << "\n";
+    std::cout << "\tYou have been given a potion and a bronze helmet.\n\n";
 
     std::cout << "Inventory: " << "\n" << player->getInventory()->toString() << "\n";
 
@@ -274,7 +274,23 @@ int main(int argc, char* argv[]) {
 	
 	std::cout << "\n";
 	
+	std::cout << "Using potion to restore your health.\n";
+	
+	player->useItem(1);
+	
+	std::cout << "\n";
+	
+	std::cout << player->toString() << "\n";
+	
+	std::cout << "Inventory: " << "\n" << player->getInventory()->toString() << "\n";
+
+	std::cout << "\n";
+	
+	std::cout << "Equiping Fur Hat.\n";
+	
 	player->equip("head", ptrItem(new Head("Fur Hat", "A comfortable fur hat.")));
+	
+	std::cout << "\n";
 
 	printEquipment(player);
 

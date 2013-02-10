@@ -17,6 +17,6 @@ HealthPotion::HealthPotion(int potency) : Potion(name[potency], "health potion",
     potency_ = potency;
 }
 
-int HealthPotion::getResto() {
-    return resto[potency_];
+int HealthPotion::use() {
+	return resto[potency_];
 }

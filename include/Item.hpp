@@ -23,7 +23,7 @@ class Item {
         bool isEquipable();
         void setEquipable(bool equipable);
 
-        int use();
+        virtual int use();
 
         bool equals(Item*& other);
         bool equals(Item& other);

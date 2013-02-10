@@ -17,6 +17,6 @@ MagicPotion::MagicPotion(int potency) : Potion(name[potency], "magic potion", de
     potency_ = potency;
 }
 
-int MagicPotion::getResto() {
+int MagicPotion::use() {
     return resto[potency_];
 }

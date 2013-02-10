@@ -6,8 +6,8 @@
 class HealthPotion : public Potion {
     public:
         HealthPotion(int potency);
-
-        int getResto();
+		
+		int use();
     private:
         const static std::string name[];
         const static std::string desc[];

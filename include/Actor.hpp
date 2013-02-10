@@ -41,6 +41,9 @@ class Actor {
 
 		bool addItem(ptrItem item);
         void removeItem(int index);
+		
+		void useItem(int index);
+		void useItem(ptrItem item);
 
         void levelUp();
 

@@ -59,12 +59,16 @@ int Inventory::getItemIndex(boost::shared_ptr<Item> item) {
     return -1;
 }
 
-int Inventory::usePotion(int index) {
-    int resto = items_[index]->use();
+int Inventory::usePotion(unsigned int index) {
+	if (index > 0 && index < items_.size()) {
+		int resto = items_[index]->use();
 
-    items_.erase(items_.begin() + index);
+		items_.erase(items_.begin() + index);
 
-    return resto;
+		return resto;
+	}
+	
+	return -1;
 }
 
 /*std::string Inventory::getParent(int index) {

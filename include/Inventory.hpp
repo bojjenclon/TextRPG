@@ -18,13 +18,13 @@ class Inventory {
 		int getNumItems();
 
 		bool addItem(ptrItem item);
-        void removeItem(int);
+        void removeItem(int index);
 		void removeItem(ptrItem item);
 
 		ptrItem getItem(int index);
 		int getItemIndex(ptrItem item);
 
-        int usePotion(int);
+        int usePotion(unsigned int index);
 
         std::string toString();
     private:

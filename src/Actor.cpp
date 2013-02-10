@@ -4,6 +4,8 @@
 
 #include "Functions.hpp"
 #include "Stats.hpp"
+#include "HealthPotion.hpp"
+#include "MagicPotion.hpp"
 
 #include "Actor.hpp"
 
@@ -184,6 +186,66 @@ bool Actor::addItem(boost::shared_ptr<Item> item) {
 }
 void Actor::removeItem(int index) {
     inv_->removeItem(index);
+}
+
+void Actor::useItem(int index) {
+	if (index > -1 && index < inv_->getNumItems()) {
+		ptrItem item = inv_->getItem(index);
+		
+		if (item->getID() == "health potion") {
+			int resto = inv_->usePotion(index);
+			
+			if (modifiers_["hp"] < 0) {
+				modifiers_["hp"] += resto;
+				
+				if (modifiers_["hp"] > 0) {
+					modifiers_["hp"] = 0;
+				}
+			}
+		}
+		else if (item->getID() == "magic potion") {
+			int resto = inv_->usePotion(index);
+			
+			if (modifiers_["mp"] < 0) {
+				modifiers_["mp"] += resto;
+				
+				if (modifiers_["mp"] > 0) {
+					modifiers_["mp"] = 0;
+				}
+			}
+		}
+		else {
+			
+		}
+	}
+}
+
+void Actor::useItem(ptrItem item) {
+	if (item->getID() == "health potion") {
+		int resto = item->use();
+		
+		if (modifiers_["hp"] < 0) {
+			modifiers_["hp"] += resto;
+			
+			if (modifiers_["hp"] > 0) {
+				modifiers_["hp"] = 0;
+			}
+		}
+	}
+	else if (item->getID() == "magic potion") {
+		int resto = item->use();
+		
+		if (modifiers_["mp"] < 0) {
+			modifiers_["mp"] += resto;
+			
+			if (modifiers_["mp"] > 0) {
+				modifiers_["mp"] = 0;
+			}
+		}
+	}
+	else {
+		
+	}
 }
 
 void Actor::levelUp() {

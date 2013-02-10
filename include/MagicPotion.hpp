@@ -7,7 +7,7 @@ class MagicPotion : public Potion {
     public:
         MagicPotion(int potency);
 
-        int getResto();
+        int use();
     private:
         const static std::string name[];
         const static std::string desc[];
